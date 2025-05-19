@@ -1,0 +1,80 @@
+type Query {
+recipeById(id: ID!): Recipe
+allRecipes: [Recipe!]!
+recipesByCategory(category: String!): [Recipe!]!
+recipesWithPagination(page: Int!, size: Int!): RecipePage!
+}
+
+type Mutation {
+createRecipe(input: RecipeInput!): Recipe!
+updateRecipe(id: ID!, input: RecipeInput!): Recipe
+deleteRecipe(id: ID!): Boolean
+addIngredientToRecipe(recipeId: ID!, ingredientInput: IngredientInput!): Recipe
+}
+
+type Subscription {
+recipeAdded: Recipe!
+recipeUpdated: Recipe!
+}
+
+input RecipeInput {
+title: String!
+description: String
+prepTime: Int
+cookTime: Int
+servings: Int
+category: String!
+difficulty: Difficulty
+}
+
+input IngredientInput {
+name: String!
+amount: Float!
+unit: String
+}
+
+input InstructionInput {
+stepNumber: Int!
+description: String!
+}
+
+type Recipe {
+id: ID!
+title: String!
+description: String
+prepTime: Int
+cookTime: Int
+servings: Int
+category: String!
+difficulty: Difficulty
+ingredients: [Ingredient!]!
+instructions: [Instruction!]!
+createdAt: String!
+updatedAt: String
+}
+
+type Ingredient {
+id: ID!
+name: String!
+amount: Float!
+unit: String
+}
+
+type Instruction {
+id: ID!
+stepNumber: Int!
+description: String!
+}
+
+type RecipePage {
+content: [Recipe!]!
+totalElements: Int!
+totalPages: Int!
+hasNext: Boolean!
+}
+
+enum Difficulty {
+EASY
+MEDIUM
+HARD
+}
