@@ -1,5 +1,12 @@
-``markdown
 # GraphQL Recipe Management API
+
+[![Java](https://img.shields.io/badge/Java-21-blue.svg)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.5-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![GraphQL Java](https://img.shields.io/badge/GraphQL%20Java-22.3-E10098.svg)](https://www.graphql-java.com/)
+[![Spring GraphQL](https://img.shields.io/badge/Spring%20GraphQL-1.3.5-green.svg)](https://spring.io/projects/spring-graphql)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Build Status](https://img.shields.io/badge/Build-Passing-success.svg)]()
+
 
 A Spring Boot application implementing a GraphQL API for managing recipes.
 
@@ -14,7 +21,7 @@ A Spring Boot application implementing a GraphQL API for managing recipes.
 
 ## Prerequisites
 
-- JDK 17 or later
+- JDK 21
 - Maven or Gradle
 
 ## Getting Started
